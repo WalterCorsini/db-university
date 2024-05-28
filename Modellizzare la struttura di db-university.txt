@@ -1,0 +1,39 @@
+Modellizzare la struttura di un database per memorizzare tutti i dati riguardanti una università:
+sono presenti diversi Dipartimenti (es.: Lettere e Filosofia, Matematica, Ingegneria ecc.);
+ogni Dipartimento offre più Corsi di Laurea (es.: Civiltà e Letterature Classiche, Informatica, Ingegneria Elettronica ecc..)
+ogni Corso di Laurea prevede diversi Corsi (es.: Letteratura Latina, Sistemi Operativi 1, Analisi Matematica 2 ecc.);
+ogni Corso può essere tenuto da diversi Insegnanti;
+ogni Corso prevede più appelli d'Esame;
+ogni Studente è iscritto ad un solo Corso di Laurea;
+ogni Studente può iscriversi a più appelli di Esame;
+per ogni appello d'Esame a cui lo Studente ha partecipato, è necessario memorizzare il voto ottenuto, anche se non sufficiente.
+Pensiamo a quali entità (tabelle) creare per il nostro database e cerchiamo poi di stabilirne le relazioni. Infine, andiamo a definire le colonne e i tipi di dato di ogni tabella.
+
+
+db-university
+
+
+department-degree_courses
+un dipartimento puo avere piu corsi di laurea e un corso di laurea puo essere fatto solo da un dipartimento
+one to many
+
+degree_courses-specific_courses
+1 corsi di laurea ha piu corsi e un corso puo essere in presente in piu corsi di laurea
+many to many
+
+specific_courses-exams
+il corso specifico puo avere piu appelli di esame e un appello di esame puo essere solo di un corso
+one to many
+
+specific_courses-teachers
+un corso puo essere tenuto da piu insegnanti e un insegnante puo tenere piu corsi
+many to many
+
+exams_calls-students
+un studente puo fare piu appelli e un appello puo essere fatto da piu studenti
+many to many
+
+students-degree_courses
+uno studente puo fare solo un corso di laurea e un corso di laurea puo essere fatto da piu studenti
+many to one
+
