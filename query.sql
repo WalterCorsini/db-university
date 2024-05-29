@@ -48,3 +48,8 @@ SELECT count(*) as senza_numero
 FROM `teachers`
 WHERE `phone` IS NULL;
 
+-- 9. Inserire nella tabella degli studenti un nuovo record con i propri dati (per il campo degree_id, inserire un valore casuale)
+
+INSERT INTO `students` (`degree_id`,`name`, `surname`, `date_of_birth`,`fiscal_code`, `enrolment_date`, `registration_number`, `email`)
+VALUES ("1","Olga", "Demina", "2000-01-01", "ehehbrhefefe","2020-01-01","900000","olga@demina.it");
+
