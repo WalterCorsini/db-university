@@ -37,4 +37,7 @@ SELECT *
 FROM `degrees`
 WHERE `name` LIKE "corso di laurea magistrale%"; -- dato che non è key sensitive uso le minuscole.
 
+-- 7. Da quanti dipartimenti è composta l'università? (12)
 
+SELECT count(*) as quanti_dipartimenti
+FROM `departments`;
