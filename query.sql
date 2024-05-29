@@ -41,3 +41,10 @@ WHERE `name` LIKE "corso di laurea magistrale%"; -- dato che non è key sensitiv
 
 SELECT count(*) as quanti_dipartimenti
 FROM `departments`;
+
+-- 8. Quanti sono gli insegnanti che non hanno un numero di telefono? (50)
+
+SELECT count(*) as senza_numero
+FROM `teachers`
+WHERE `phone` IS NULL;
+
