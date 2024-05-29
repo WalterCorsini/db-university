@@ -17,4 +17,9 @@ WHERE TIMESTAMPDIFF(YEAR,`date_of_birth`, CURDATE()) > 30;
 --  TIMESTAMPDIFF FA LA DIFFERENZA TRA LA DATA ODIERNA E LA DATA DI NASCITA. DOPO CONFRONTO IL RISULTATO CON LA CONDIZIONE DATA.
 
 
--- 
+-- 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea (286)
+
+SELECT *
+FROM `courses`
+WHERE `period` = "I semestre"
+AND `year` = 1;
