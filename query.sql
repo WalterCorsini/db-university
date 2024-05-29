@@ -53,3 +53,15 @@ WHERE `phone` IS NULL;
 INSERT INTO `students` (`degree_id`,`name`, `surname`, `date_of_birth`,`fiscal_code`, `enrolment_date`, `registration_number`, `email`)
 VALUES ("1","Olga", "Demina", "2000-01-01", "ehehbrhefefe","2020-01-01","900000","olga@demina.it");
 
+-- 10. Cambiare il numero dell’ufficio del professor Pietro Rizzo in 126
+
+UPDATE `teachers`
+SET `office_number` = 126
+WHERE `id` = 58;
+
+-- 11. Eliminare dalla tabella studenti il record creato precedentemente al punto 9
+
+DELETE FROM `students`
+WHERE `id` = 5002;
+
+
