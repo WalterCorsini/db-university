@@ -72,3 +72,13 @@ DELETE FROM `students`
 WHERE `id` = 5002;
 
 
+
+
+--  group e join 
+
+-- GROUP
+-- 1. Contare quanti iscritti ci sono stati ogni anno
+
+SELECT YEAR(`enrolment_date`), COUNT(*) AS student_count
+FROM `students`
+GROUP BY YEAR(`enrolment_date`);
