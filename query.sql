@@ -1,7 +1,9 @@
 -- 1. Selezionare tutti gli studenti nati nel 1990 (160)
 SELECT *
 FROM  `students`
-WHERE `date_of_birth` LIKE '1990%';
+WHERE `date_of_birth` LIKE '1990%'; 
+-- altra soluzione confrontare solo anno:
+--WHERE YEAR(`date_of_birth`) = 1990;
 
 -- Selezionare tutti i corsi che valgono più di 10 crediti (479)
 
@@ -13,8 +15,13 @@ WHERE `cfu` > 10;
 
 SELECT *
 FROM `students`
-WHERE TIMESTAMPDIFF(YEAR,`date_of_birth`, CURDATE()) > 30;
+WHERE TIMESTAMPDIFF(YEAR,`date_of_birth`, CURDATE()) >= 30;
 --  TIMESTAMPDIFF FA LA DIFFERENZA TRA LA DATA ODIERNA E LA DATA DI NASCITA. DOPO CONFRONTO IL RISULTATO CON LA CONDIZIONE DATA.
+
+-- 2 soluzione ma risultato diverso. la prima piu corretto.
+-- SELECT * 
+-- FROM `students` 
+-- WHERE `date_of_birth` <= DATE_SUB(CURRENT_DATE(),INTERVAL 30 YEAR);  
 
 
 -- 4. Selezionare tutti i corsi del primo semestre del primo anno di un qualsiasi corso di laurea (286)
@@ -29,7 +36,7 @@ AND `year` = 1;
 SELECT *
 FROM `exams`
 WHERE `date` = "2020-06-20"
-AND `hour`> "14:00:00";
+AND `hour`> "14:00:00";  -- per prendere solo ora possiamo usare anche  HOUR(`hour`) >= 14
 
 -- 6. Selezionare tutti i corsi di laurea magistrale (38)
 
