@@ -193,5 +193,5 @@ INNER JOIN `course_teacher`
 ON `courses`.`id` = `course_teacher`.`course_id`
 INNER JOIN `teachers`
 ON `course_teacher`.`teacher_id` = `teachers`.`id`
-WHERE `departments`.`id` = 5;
+WHERE `departments`.`name` = "Dipartimento di Matematica";
 
