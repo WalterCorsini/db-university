@@ -85,12 +85,18 @@ GROUP BY YEAR(`enrolment_date`);
 
 -- 2. Contare gli insegnanti che hanno l'ufficio nello stesso edificio
 
-SELECT `teachers`.`office_number` ,COUNT(*) AS `count`
-FROM `teachers`
-GROUP BY `teachers`.`office_number`
-HAVING COUNT(*) > 1;  -- con having 19 risultati e tutti con almeno 2 insegnanti nello stesso ufficio.
+-- SELECT `teachers`.`office_number` ,COUNT(*) AS `count`
+-- FROM `teachers`
+-- GROUP BY `teachers`.`office_number`
+-- HAVING COUNT(*) > 1;  -- con having 19 risultati e tutti con almeno 2 insegnanti nello stesso ufficio.
 -- senza having e applicando al count nel select il >1 prende tutti anche uffici con 1 o nessuno.
 -- qunado usi group o quando fai usi un count in where o in select ignorano la condizione solo having fa la selezione in base ad una condizione su un dato calcolato
+
+ SELECT `teachers`.`office_address` ,COUNT(*) AS `count`
+ FROM `teachers`
+ GROUP BY `teachers`.`office_address`
+ HAVING COUNT(*) > 1;
+--  2 soluzione sempre utilizzando count ma la richiesta e che gli insegnanti dovessero avere l'ufficio nello stesso edificio e non condividere l'ufficio.
 
 -- 3. Calcolare la media dei voti di ogni appello d'esame
 
