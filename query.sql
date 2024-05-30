@@ -88,7 +88,9 @@ GROUP BY YEAR(`enrolment_date`);
 SELECT `teachers`.`office_number` ,COUNT(*) AS `count`
 FROM `teachers`
 GROUP BY `teachers`.`office_number`
-HAVING COUNT(*) > 1;
+HAVING COUNT(*) > 1;  -- con having 19 risultati e tutti con almeno 2 insegnanti nello stesso ufficio.
+-- senza having e applicando al count nel select il >1 prende tutti anche uffici con 1 o nessuno.
+-- qunado usi group o quando fai usi un count in where o in select ignorano la condizione solo having fa la selezione in base ad una condizione su un dato calcolato
 
 -- 3. Calcolare la media dei voti di ogni appello d'esame
 
