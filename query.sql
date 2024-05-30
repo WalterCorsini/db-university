@@ -114,4 +114,26 @@ INNER JOIN `degrees`
 ON `students`.`degree_id` = `degrees`.`id`
 WHERE `degrees`.`name` = "Corso di Laurea in Economia";
 
+-- 2. Selezionare tutti i Corsi di Laurea Magistrale del Dipartimento di Neuroscienze
+
+SELECT *
+FROM `departments`
+INNER JOIN `degrees`
+ON `departments`.`id` = `degrees`.`department_id`
+WHERE `degrees`.`level`="magistrale"
+AND `departments`.`name` = "dipartimento di neuroscienze";
+-- result 1
+
+SELECT *
+FROM `departments`
+INNER JOIN `degrees`
+ON `departments`.`id` = `degrees`.`department_id`
+WHERE `degrees`.`name`LIKE "Corso di Laurea Magistrale%"
+AND `departments`.`name` = "dipartimento di neuroscienze";
+-- result 1
+
+-- 3. Selezionare tutti i corsi in cui insegna Fulvio Amato (id=44)
+
+
+
 
