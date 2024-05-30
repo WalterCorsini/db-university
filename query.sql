@@ -89,3 +89,9 @@ SELECT `teachers`.`office_number` ,COUNT(*) AS `count`
 FROM `teachers`
 GROUP BY `teachers`.`office_number`
 HAVING COUNT(*) > 1;
+
+-- 3. Calcolare la media dei voti di ogni appello d'esame
+
+SELECT `exam_id`, AVG(`vote`)
+FROM `exam_student`
+GROUP BY `exam_id`;
